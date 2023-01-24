@@ -1,7 +1,7 @@
 <script>
 import AppDataList from './AppDataList.vue';
 export default{
-    name: AppMain,
+    name: 'AppMain',
     components:{AppDataList}
 }
 </script>
