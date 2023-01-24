@@ -1,28 +1,22 @@
 <script>
-import axios from 'axios'
-import AppCardVue from './AppCard.vue'
+import {store} from '../store';
+import AppCardVue from './AppCard.vue';
 export default{
     name: 'DataList',
     components:{AppCardVue},
-    data(){
-        return{
-            ListPokemon:[]
-        }
-    },
-    created(){
-        axios.get('https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=15&page=1')
-        .then(res =>{
-           this.ListPokemon = res.data.docs
-        })
+   data(){
+    return{
+        store
     }
+   }
 }
 </script>
 
 <template>
 
-<section class="container row row-cols-2 row-cols-md-3 row-cols-lg-4 overflow-auto  pokedex">
+<section class="container row row-cols-2 row-cols-md-3 row-cols-lg-4 overflow-auto py-4  pokedex">
     <AppCardVue 
-    v-for="pokemon in ListPokemon" 
+    v-for="pokemon in store.ListPokemon" 
     :key="pokemon._id" 
     class="mb-3"
     :name="pokemon.name"
@@ -43,4 +37,8 @@ export default{
     justify-content: center;
     gap: 20px;
     border: 10px solid rgb(203, 203, 13);
-}</style>
+    
+}
+
+
+</style>

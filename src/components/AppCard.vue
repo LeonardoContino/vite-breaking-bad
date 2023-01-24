@@ -16,7 +16,7 @@ export default{
 <template>
     <div class="card-poke text-center rounded-4">
         <img class="img-fluid" :src="image" alt="name">
-        <h4>{{ number }}</h4>
+        <h4 class="text-black-50">#{{ number }}</h4>
         <h3>{{ name }}</h3>
         <p>{{ type }}</p>
     </div>
@@ -36,4 +36,9 @@ img {
     border-radius: 50%;
     padding: 10px;
 }
+.card-poke:hover{
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
 </style>

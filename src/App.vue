@@ -1,8 +1,26 @@
 <script>
 import AppMain from './components/AppMain.vue';
+import {store} from './store';
+import axios from 'axios';
 
 export default{
-  components:{AppMain}
+  components:{AppMain},
+  data(){
+        return{
+            store
+        }
+    },
+    methods:{
+      Getlist(url){
+        axios.get(url)
+        .then(res =>{
+           store.ListPokemon = res.data.docs
+        })
+      }
+    },
+    created(){
+        this.Getlist(store.apiUrl)
+    }
 }
 </script>
 
