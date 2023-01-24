@@ -10,7 +10,7 @@ export default{
         }
     },
     created(){
-        axios.get('https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=10&page=1')
+        axios.get('https://41tyokboji.execute-api.eu-central-1.amazonaws.com/dev/api/v1/pokemons?per=15&page=1')
         .then(res =>{
            this.ListPokemon = res.data.docs
         })
@@ -20,11 +20,11 @@ export default{
 
 <template>
 
-<section class="container row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 border pokedex">
+<section class="container row row-cols-2 row-cols-md-3 row-cols-lg-4 overflow-auto  pokedex">
     <AppCardVue 
     v-for="pokemon in ListPokemon" 
-    :key="ListPokemon._id" 
-    class="col border"
+    :key="pokemon._id" 
+    class="mb-3"
     :name="pokemon.name"
     :number="pokemon.number"
     :type="pokemon.type1"
@@ -37,12 +37,10 @@ export default{
 
 <style scoped lang="scss">
 .pokedex{
-    min-height: 600px;
-    
     margin: 0 auto;
-    .col{
-        height: 300px;
-
-        
-    }
+    height: 500px;
+    width: 800px;
+    justify-content: center;
+    gap: 20px;
+    border: 10px solid rgb(203, 203, 13);
 }</style>
