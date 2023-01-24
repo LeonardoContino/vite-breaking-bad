@@ -18,9 +18,7 @@ export default{
 
 <style scoped lang="scss">
 @use './assets/scss/style.scss' as *;
-body{
-  height: 100vh;
-}
+
 header img{
   width: 200px;
   text-align: center;

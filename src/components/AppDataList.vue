@@ -1,7 +1,9 @@
 <script>
 import axios from 'axios'
+import AppCardVue from './AppCard.vue'
 export default{
     name: 'DataList',
+    components:{AppCardVue},
     data(){
         return{
             ListPokemon:[]
@@ -18,7 +20,29 @@ export default{
 
 <template>
 
-<section></section>
+<section class="container row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 border pokedex">
+    <AppCardVue 
+    v-for="pokemon in ListPokemon" 
+    :key="ListPokemon._id" 
+    class="col border"
+    :name="pokemon.name"
+    :number="pokemon.number"
+    :type="pokemon.type1"
+    :color="pokemon.color"
+    :image="pokemon.imageUrl"
+    ></AppCardVue>
+
+</section>
 </template>
 
-<style></style>
+<style scoped lang="scss">
+.pokedex{
+    min-height: 600px;
+    
+    margin: 0 auto;
+    .col{
+        height: 300px;
+
+        
+    }
+}</style>
