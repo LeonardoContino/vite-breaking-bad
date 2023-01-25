@@ -1,5 +1,5 @@
 <script>
-import { createDOMCompilerError } from '@vue/compiler-dom';
+
 
 export default{
     name: 'card',
@@ -14,6 +14,7 @@ export default{
 </script>
 
 <template>
+    
     <div class="card-poke text-center rounded-4">
         <img class="img-fluid" :src="image" alt="name">
         <h4 class="text-black-50">#{{ number }}</h4>

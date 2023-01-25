@@ -16,7 +16,8 @@ export default{
         .then(res =>{
            store.ListPokemon = res.data.docs
         })
-      }
+      },
+      
     },
     created(){
         this.Getlist(store.apiUrl)
@@ -29,6 +30,8 @@ export default{
     <header class="d-flex justify-content-center p-4 ">
     <img  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="pokemon">
   </header>
+  
+ 
   <AppMain></AppMain>
   </body>
  
